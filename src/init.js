@@ -22,12 +22,44 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+    var dancer = new dancerMakerFunction(
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
   });
+
+  var makeNewPosition = function () {
+    
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).width() - 50;
+    
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    
+    return [nh, nw];    
+    
+  };
+
+  var animateDiv = function(node) {
+    var newq = makeNewPosition();
+    $(node).animate({ top: newq[0], left: newq[1] }, function() {
+      animateDiv();        
+    });
+    
+  }; 
+
+  $('body').on('mouseover', '.allen', function() {
+    animateDiv($(this));
+    //$('.allen').css('height', '200px');
+    // prompt('hello');
+  }); 
+  $('body').on('click', '.allen', function() {
+    $(this).hide();
+    //$('.allen').css('height', '200px');
+    // prompt('hello');
+  }); 
 });
 
