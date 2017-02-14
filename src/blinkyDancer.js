@@ -2,9 +2,6 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   debugger;
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.timeBetweenSteps = timeBetweenSteps;
-  console.log(this.step);
-  // this.step(timeBetweenSteps);
-  console.log(this.step);
   this.setPosition(top, left);
 };
 
