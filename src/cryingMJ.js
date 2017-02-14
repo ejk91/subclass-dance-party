@@ -2,6 +2,7 @@ var cryingMJ = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   // this.$node = $('<span class="allen"></span>');
   this.$node.addClass('cryingMJ');
+  this.$node.data('clickCount', 0);
 };
 
 cryingMJ.prototype = Object.create(makeDancer.prototype);

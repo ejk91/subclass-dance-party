@@ -51,15 +51,35 @@ $(document).ready(function() {
     
   }; 
 
-  $('body').on('mouseover', '.allen', function() {
+  $('.lineButton').on('click', function () {
+    var l = 100;
+    $('.dancer').each(function() {
+      $(this).animate({left: l});
+    });
+  });
+
+  $('body').on('mouseover', '.allen, .cryingMJ', function() {
     animateDiv($(this));
-    //$('.allen').css('height', '200px');
     // prompt('hello');
   }); 
+
   $('body').on('click', '.allen', function() {
-    $(this).hide();
+    //$(this).hide();
+    $(this).fadeOut();
+    var newCount = $('.allen').data('clickCount') + 1;
+    $('.allen').data('clickCount', newCount);
+    $('.allenCaught').html(newCount);
     //$('.allen').css('height', '200px');
     // prompt('hello');
   }); 
+
+  $('body').on('click', '.cryingMJ', function() {
+    $(this).hide();
+    var newCount = $('.cryingMJ').data('clickCount') + 1;
+    $('.cryingMJ').data('clickCount', newCount);
+    $('.mjCaught').html(newCount);
+    //$('.allen').css('height', '200px');
+    // prompt('hello');
+  });
 });
 
