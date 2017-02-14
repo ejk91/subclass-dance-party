@@ -36,6 +36,7 @@ body, a:link, a:visited, a:active{
   background-image: url('images/allen.gif');
   background-size: 100px 100px;
   position:absolute;
+  -webkit-animation: spin 4s infinite linear;
 }
 
 .cryingMJ{
@@ -52,3 +53,7 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(320deg);}
+    100% {-webkit-transform: rotate(40deg);}   
+}

@@ -60,26 +60,20 @@ $(document).ready(function() {
 
   $('body').on('mouseover', '.allen, .cryingMJ', function() {
     animateDiv($(this));
-    // prompt('hello');
   }); 
 
   $('body').on('click', '.allen', function() {
-    //$(this).hide();
     $(this).fadeOut();
     var newCount = $('.allen').data('clickCount') + 1;
     $('.allen').data('clickCount', newCount);
     $('.allenCaught').html(newCount);
-    //$('.allen').css('height', '200px');
-    // prompt('hello');
   }); 
 
   $('body').on('click', '.cryingMJ', function() {
-    $(this).hide();
+    $(this).fadeOut();
     var newCount = $('.cryingMJ').data('clickCount') + 1;
     $('.cryingMJ').data('clickCount', newCount);
     $('.mjCaught').html(newCount);
-    //$('.allen').css('height', '200px');
-    // prompt('hello');
   });
 });
 
