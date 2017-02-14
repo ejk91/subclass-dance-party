@@ -23,18 +23,18 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
+      $('.court').height() * Math.random(),
+      $('.court').width() * Math.random(),
       Math.random() * 1000
     );
-    $('body').append(dancer.$node);
+    $('.court').append(dancer.$node);
   });
 
   var makeNewPosition = function () {
     
     // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 50;
-    var w = $(window).width() - 50;
+    var h = $('.court').height() - 50;
+    var w = $('.court').width() - 50;
     
     var nh = Math.floor(Math.random() * h);
     var nw = Math.floor(Math.random() * w);
@@ -50,6 +50,14 @@ $(document).ready(function() {
     });
     
   }; 
+
+  $('.raceButton').on('click', function() {
+    var r = 1700;
+    $('.dancer').each(function() {
+      var speed = Math.random() * 10000;
+      $(this).animate({left: r}, speed);
+    });
+  });
 
   $('.lineButton').on('click', function () {
     var l = 100;
