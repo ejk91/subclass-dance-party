@@ -51,6 +51,16 @@ $(document).ready(function() {
     
   }; 
 
+  var obj = document.createElement('audio');
+  obj.src = 'https://kahimyang.com/resources/sound/click.mp3';
+  obj.volume = 0.10;
+  obj.autoPlay = false;
+  obj.preLoad = true;       
+ 
+  $('.raceButton').click(function() {
+    obj.play();
+  });
+
   $('.raceButton').on('click', function() {
     //var r = 1700;
     var r = $(window).width() - 100;
