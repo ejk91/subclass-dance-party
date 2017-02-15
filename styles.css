@@ -38,7 +38,7 @@ body{
 }
 .title, .addDancerButton, .lineButton, .raceButton, .score{
   padding:3px 12px;
-  float:right;
+  float:left;
   background-color: white;
   color: black;
   border: 2px solid green;
@@ -46,7 +46,7 @@ body{
   font-weight: bold;
 }
 .score {
-  float: none;
+  float: right;
 }
 .topbar{
   height:32px;
@@ -86,6 +86,27 @@ body{
   background-size: 100px 100px;
   position:absolute;
   -webkit-animation: spin 4s infinite linear;
+}
+.marcus{
+  border: none;
+  height: 100px;
+  width: 100px;
+  background-image: url('images/marcus.gif');
+  background-repeat: no-repeat;
+  background-size: 100px 100px;
+  position:absolute;
+  -webkit-animation: anim 2s infinite linear;
+  animation: anim 2s infinite linear;
+}
+
+@-webkit-keyframes anim {
+    from {-webkit-transform: rotateY(0deg);}
+    to {-webkit-transform: rotateY(360deg);}
+}
+
+@keyframes anim {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
 }
 
 @-webkit-keyframes spin {

@@ -72,7 +72,7 @@ $(document).ready(function() {
     });
   });
 
-  $('body').on('mouseover', '.allen, .cryingMJ', function() {
+  $('body').on('mouseover', '.allen, .cryingMJ, .marcus', function() {
     animateDiv($(this));
   }); 
 
@@ -88,6 +88,13 @@ $(document).ready(function() {
     var newCount = $('.cryingMJ').data('clickCount') + 1;
     $('.cryingMJ').data('clickCount', newCount);
     $('.mjCaught').html(newCount);
+  });
+
+  $('body').on('click', '.marcus', function() {
+    $(this).fadeOut();
+    var newCount = $('.marcus').data('clickCount') + 1;
+    $('.marcus').data('clickCount', newCount);
+    $('.marcusCaught').html(newCount);
   });
 });
 
