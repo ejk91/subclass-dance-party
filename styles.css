@@ -6,9 +6,7 @@ body{
   background-size: 100%;
   font-size: 18px;
 }
-body, a:link, a:visited, a:active{
-  color: lightblue;
-}
+
 
 .court {
   background-image: url('images/background.png');
@@ -23,9 +21,17 @@ body, a:link, a:visited, a:active{
   right: 0;
   margin: auto;
 }
-.title, .addDancerButton, .lineButton, .raceButton{
-  padding:5px 12px;
+.title, .addDancerButton, .lineButton, .raceButton, .score{
+  padding:3px 12px;
   float:right;
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+  text-decoration: none;
+  font-weight: bold;
+}
+.score {
+  float: none;
 }
 .topbar{
   height:32px;
@@ -49,7 +55,7 @@ body, a:link, a:visited, a:active{
   background-image: url('images/allen.gif');
   background-size: 100px 100px;
   position:absolute;
-  -webkit-animation: spin 1s infinite linear;
+  -webkit-animation: spin 0.6s infinite linear;
 }
 
 .cryingMJ{
@@ -64,9 +70,13 @@ body, a:link, a:visited, a:active{
   background-repeat: no-repeat;
   background-size: 100px 100px;
   position:absolute;
+  -webkit-animation: spin 4s infinite linear;
 }
 
 @-webkit-keyframes spin {
     0%  {-webkit-transform: rotate(0deg);}
-    100% {-webkit-transform: rotate(360deg);}   
+    25%  {-webkit-transform: rotate(30deg);}
+    50%  {-webkit-transform: rotate(0deg);}
+    75%  {-webkit-transform: rotate(-30deg);}
+    100% {-webkit-transform: rotate(0deg);}   
 }

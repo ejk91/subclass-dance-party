@@ -52,7 +52,8 @@ $(document).ready(function() {
   }; 
 
   $('.raceButton').on('click', function() {
-    var r = 1700;
+    //var r = 1700;
+    var r = $(window).width() - 100;
     $('.dancer').each(function() {
       var speed = Math.random() * 10000;
       $(this).animate({left: r}, speed);
