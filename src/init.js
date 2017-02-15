@@ -23,11 +23,11 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $('.courtContainer').height() * Math.random(),
-      $('.courtContainer').width() * Math.random(),
+      $('.court').height() * Math.random(),
+      $('.court').width() * Math.random(),
       Math.random() * 1000
     );
-    $('.courtContainer').append(dancer.$node);
+    $('.court').append(dancer.$node);
   });
 
   var makeNewPosition = function () {
@@ -54,10 +54,15 @@ $(document).ready(function() {
   $('.raceButton').on('click', function() {
     //var r = 1700;
     var r = $(window).width() - 100;
-    $('.dancer').each(function() {
-      var speed = Math.random() * 10000;
-      $(this).animate({left: r}, speed);
-    });
+    $('.cash').css('display', 'block');
+    setTimeout(function() {
+      $('.cash').css('display', 'none');
+      $('.dancer').each(function() {
+        var speed = Math.random() * 10000;
+        $(this).animate({left: r}, speed);
+      });
+      
+    }, 3000);
   });
 
   $('.lineButton').on('click', function () {
