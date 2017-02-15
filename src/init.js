@@ -52,23 +52,20 @@ $(document).ready(function() {
   }; 
 
   var obj = document.createElement('audio');
-  obj.src = 'https://kahimyang.com/resources/sound/click.mp3';
+  obj.src = 'songs/fly.mp3';
   obj.volume = 0.10;
   obj.autoPlay = false;
   obj.preLoad = true;       
  
-  $('.raceButton').click(function() {
-    obj.play();
-  });
-
   $('.raceButton').on('click', function() {
     //var r = 1700;
     var r = $(window).width() - 100;
     $('.cash').css('display', 'block');
     setTimeout(function() {
       $('.cash').css('display', 'none');
+      obj.play();
       $('.dancer').each(function() {
-        var speed = Math.random() * 10000;
+        var speed = Math.random() * 16000;
         $(this).animate({left: r}, speed);
       });
       
